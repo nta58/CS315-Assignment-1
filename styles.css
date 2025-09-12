@@ -1,0 +1,30 @@
+.logo {
+    text-decoration: none;
+    color: black;
+    /* align text in the middle compared to the image */
+    display: flex;
+    align-items: center;;
+}
+
+.wonton-list{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-bar{
+    margin: 0;
+    padding-left: 0;
+}
+
+.nav-bar li{
+    padding-top: 15px;
+    display: inline-block;
+    margin: 0 20px;
+} 
+
+.gallery img{
+    width: 400px;
+    height: auto;
+    margin: 5px;
+}
