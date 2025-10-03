@@ -1,9 +1,136 @@
+/* Design block elements to display some paragraphs. Use background image, rounded design,
+overflow:scroll, padding, and margin. In addition, use an image to create the border. */
+.text-block{
+    background-color: lightyellow;
+    height: 200px;
+    border: 10px solid transparent;
+    border-image: url("images/border.jpeg") 30 round; 
+    overflow: scroll;
+    padding: 20px;
+    margin: 20px 200px;
+
+    background-image: url("images/background.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    border-radius: 15px;    
+}
+
+.home, .menu, .gallery, .location{
+    background-image: url("images/background.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    border-radius: 15px;    
+}
+
+.gallery{
+    background-size: cover;
+}
+
+/* 6. Create and demonstrate the following css contextual selectors in your website design (a)
+child selector (b) adjacent sibling selector. */
+/* a. child selector */
+.wonton-list > dt, .charsiu-list > dt{
+    font-weight: bold;
+}
+
+.phone-number, .email{
+    font-style: italic;
+}
+
+/* adjacent sibling selector */
+.email + .location {
+    font-style: italic;
+}
+
+/* 5. Add a couple of links to pdf files, and document files (with .docx extension). By using
+attribute selectors, add respective icons to the <a> element whose href attribute ends with
+the text ".pdf" and "*.docx". (you can use any image type, including png). */
+a[href$=".pdf"]::after{
+    background-image: url("images/PDF_file_icon.svg.png");
+}
+
+a[href$=".docx"]::after{
+    background-image: url("images/docx.png");
+}
+
+a[href$=".pdf"]::after, a[href$=".docx"]::after{
+    content: " ";
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    padding-right: 3px;
+    vertical-align: middle;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+
+/* 4. Change the first letter of the first paragraph (by using class selector) of a div element (make
+the letter bigger and of a different color). Also, modify the first line of the paragraph to be
+italic. */
+.first-paragraph:first-letter{
+    font-size: 200%;
+    color: olive;
+}
+
+.first-paragraph:first-line{
+    font-style: italic;
+}
+
+/* 3. Create css design to change the look of the nav bar. Make every other links in the nav bar to
+have separate background color. */
+/* Make anchors fill the li box */
+.nav-bar li:nth-child(odd) a{
+    background-color: lightblue;
+}
+
+.nav-bar li:nth-child(even) a{
+    background-color: lightcoral;
+}
+
+
+/* 2. Modify the anchors so that their color/font would change at mouse hover, click, or when
+they are visited. */
+/* unvisited link */
+a:link {
+    color: blue;
+    text-decoration: none;
+}
+
+/* visited link */
+a:visited {
+    color: green;
+}
+
+/* mouse over link */
+a:hover {
+    color: red;
+    text-decoration: underline;
+}
+
+/* selected link */
+a:active {
+    color: black;
+    font-style: italic;
+}
+
+.location-text{
+    text-align: center;
+}
+
 .logo {
+    background-color: white;
+    border-radius: 10px;
     text-decoration: none;
     color: black;
-    /* align text in the middle compared to the image */
     display: flex;
-    align-items: center;;
+    align-items: center;
+
+    border: 2px solid black;
 }
 
 .wonton-list{
@@ -17,11 +144,18 @@
     padding-left: 0;
 }
 
-.nav-bar li{
+.nav-bar li {
     padding-top: 15px;
     display: inline-block;
     margin: 0 20px;
 } 
+
+.nav-bar li a {
+    display: block;
+    padding: 8px 12px;
+    text-decoration: none;
+    border-radius: 10px;
+}
 
 .gallery img{
     width: 400px;

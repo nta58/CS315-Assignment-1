@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>Block Elements with Image Border</title>
+<style>
+  /* Generic reset for demo clarity */
+  * { box-sizing: border-box; }
+
+  /* Block element style */
+  .text-block {
+    /* sizing so scroll is visible */
+    width: 360px;
+    height: 160px;
+
+    /* spacing */
+    margin: 16px;
+    padding: 16px;
+
+    /* background image */
+    background-image: url("images/wonton_noodles2.JPG"); /* replace with your image */
+    background-size: cover;        /* fill the box */
+    background-repeat: no-repeat;  /* don't tile */
+    background-position: center;
+
+    /* rounded design */
+    border-radius: 14px;
+
+    /* make overflowing text scroll */
+    overflow: scroll;
+
+    /* image-based border */
+    border: 18px solid transparent;                  /* required for border-image */
+    border-image-source: url("images/border-frame.png"); /* replace with your border image */
+    border-image-slice: 30;                          /* adjust based on your image */
+    border-image-width: 18;                          /* matches border thickness above */
+    border-image-outset: 0;                          /* keep tight */
+    border-image-repeat: stretch;                    /* or 'round' depending on asset */
+
+    /* ensure background doesn't bleed under border */
+    background-clip: padding-box;
+  }
+
+  /* Optional: basic paragraph spacing inside block */
+  .text-block p { margin: 0 0 10px; }
+  .text-block p:last-child { margin-bottom: 0; }
+</style>
+</head>
+<body>
+
+<div class="text-block">
+  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer eget orci at metus imperdiet suscipit.</p>
+  <p>Phasellus sed arcu id lectus egestas congue. Cras efficitur, ipsum at ullamcorper dictum, urna massa volutpat nisl.</p>
+  <p>Vivamus fermentum, tellus vitae mattis vehicula, nibh lorem feugiat mauris, in tempor arcu mi ut quam.</p>
+</div>
+
+<div class="text-block">
+  <p>This is another block with the same design. Add more text to trigger scrolling and demonstrate overflow behavior.</p>
+  <p>Etiam vitae nisi nec est sollicitudin consequat. Suspendisse a laoreet enim. Morbi luctus, justo id varius pulvinar, dui augue dictum orci…</p>
+  <p>…continues here to ensure content exceeds the fixed height, making the scrollbar appear.</p>
+</div>
+
+</body>
+</html>
